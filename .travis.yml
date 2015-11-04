@@ -10,3 +10,7 @@ deploy:
   on:
     tags: true
     repo: justinhoward/strudel
+addons:
+  code_climate:
+    repo_token:
+      secure: "fSiRB01llLIkzTLFuRHKDwTHJYelGo7+T4q1WZq9/qBuulCzIBUS0VdS7YyZIY0WVhrdhDUVIzNmESt3nGguL9By5TasrMi4HkdaL/WQPQnn/nH4vwkyOFex1mYa/lEmUnYW6fdVWvq9aS79P20zUCcK5EBFqmWZ/jTe7ssFV9u88QwR/NOa1gH8uabsBwefFlg8hKWi+G4DKRtNuOF0dGmiE6bG3VAKv/n16WRXIfyzFHDdNdrURJObHTEzEW7+Q7JNDRsuAcaSwGAWQtOC3RZmUKWfvIy33wJE+amIhL0GHhXJ3L2s1W/pSc/eiIMg1zsGJsbeUg2VdE4XFIRY9nRamXYtCl85IYct9P1nSB4mMXC1ezCN4fmYS0CBfsBJqzEw13mRf2G3qk65z5CYPHIdL0qZ2qHvRw2tz+EVShFk9mLd9g57KsbeGcq+7daOcSMVGo4ypEd/fx512kaWdUxzZQlEZ2YqIFFI3na4aC/dZmmSFdlghtSZCtYnxz/6ZzoHvx+9rZrcR3FNNB+A3TDGynRfmIZf1ZBqKBdbrocUZ4dODxaI7/82J+y3pFoS3bmb+8r8NevwPce/QwPTesU7hJ9iBMutGLJ0+A6WB4iBpBAwq0H7awKVkluCw/me8ZAD7Nwf8+SBjWCUXX87KbCG3niF+EtKjljgE3Q3cFk="
