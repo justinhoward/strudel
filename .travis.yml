@@ -2,3 +2,11 @@ language: ruby
 rvm:
   - 2.0.0
   - 2.2.2
+deploy:
+  provider: rubygems
+  api_key:
+    secure: f1rTqFzMHA1DueBSv7YzFOHy6JxUuSwflvSL6TXG5v5bWs0c6KWi1LhY43pYnpoY3ZyDtFAGgKyvQvvFCvrTB0jQx2lFo2fbXD7LoT1ThX3GLYPvGO79ycUzmXlhNFOGPZo1V3iGb5xAo8ZOVSKNesFWivy81b9SEsL4alv1QUfd2iDs4GzGJMwMIQy758PY21vQhGFfKDXld4ei9cK3hCS4999MluWtjt624FTs9oKoMfzZHfBpMa4ml6oogM1CR3tY8OzjXK0T7nLTr7ykcIiQeJGEP5q8t/IPaDs2v5yPWHv6cm8v9gCewFnzgv0Kqp0CNidzO2OlS3JmOk8mwdKad7dwpm5TKeJp3d9od35vN7H5uYZdozjfiMI7jXsQa+cfsFWWMTf5uaD0hnJFu93AWC+8xxid+/cihcbY8GA2QjjslUNGKZ0/XsWAcE3MBVyBQLecjDWidyyNbgq/LB0lS8F+U9TKTkrNLqID/HsrGnDlA15NY2Kmz74wYs5tEpm5cJ6PLjaJ+vQ8RlgI6Vk+slExheF1bXoQZrGzdXh6G3ZdPxCKynQ7KUkpRfbpmK6NdAaIf2+B77BnpKRYmLcIkfARv2bugBx571IaN8duAz0JIJIWlubL96eJv7RzzRPrsr378OTjEpO8A+w3LyOprhHJ0MYkmeItMKQKl+k=
+  gem: strudel
+  on:
+    tags: true
+    repo: justinhoward/strudel
