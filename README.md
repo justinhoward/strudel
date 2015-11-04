@@ -1,41 +1,58 @@
 # Strudel
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/strudel`. To experiment with that code, run `bin/console` for an interactive prompt.
+Strudel is a dependency injection container for Ruby. It's a way to organize
+your Ruby application to take advantage of the [dependency inversion
+principle][ioc].
 
-TODO: Delete this and the text above, and describe your gem
+## Why another DI framework?
+
+Strudel is not a framework. It's one class that serves as a container only. No
+auto-injection. That means no polluting your classes with garbage injection
+metaprogramming. You have full, explicit control over how your services
+are constructed.
+
+Honestly, you may not even need Strudel or any other DI library. If you are
+passing your dependencies through your class constructors, you're already doing
+dependency injection! Strudel simply helps you organize your services and
+dependencies in one place.
+
+## But Ruby Doesn't Need Dependency Injection!
+
+You may have read [this post][dhh] by David Heineimer Hansson. However he
+didn't address the primary benefit of DI, explicitly defining dependencies.
+I also happen to think that patching code at runtime for testing is a egregious
+anti-pattern.  In case you need more convincing, check out this [great post] by
+Piotr Solnica.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-```ruby
+```sh
 gem 'strudel'
 ```
 
-And then execute:
+## Getting Started
 
-    $ bundle
+## Reference
 
-Or install it yourself as:
+## Credits
 
-    $ gem install strudel
+Strudel is a port of the JavaScript library [papaya] by [Justin Howard][justin].
 
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/strudel. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
-
+Papaya is originally inspired by [Pimple][pimple], a library for PHP by
+[Fabien Potencier][fabien].
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [MIT
+License][mit].
 
+[ioc]: https://en.wikipedia.org/wiki/Dependency_inversion_principle
+[dhh]: http://david.heinemeierhansson.com/2012/dependency-injection-is-not-a-virtue.html
+[piotr]: http://solnic.eu/2013/12/17/the-world-needs-another-post-about-dependency-injection-in-ruby.html
+[papaya]: https://github.com/justinhoward/papaya
+[justin]: https://github.com/justinhoward
+[pimple]: http://pimple.sensiolabs.org
+[fabien]: https://github.com/fabpot
+[mit]: http://opensource.org/licenses/MIT

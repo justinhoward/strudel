@@ -1,3 +1,3 @@
-module Strudel
-  VERSION = "0.1.0"
+class Strudel
+  VERSION = '0.1.0'
 end
