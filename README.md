@@ -1,5 +1,8 @@
 # Strudel
 
+[![Build Status](https://travis-ci.org/justinhoward/strudel.svg?branch=master)]
+(https://travis-ci.org/justinhoward/strudel)
+
 Strudel is a dependency injection container for Ruby. It's a way to organize
 your Ruby application to take advantage of the [dependency inversion
 principle][ioc].
