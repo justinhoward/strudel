@@ -1,4 +1,3 @@
-# Strudel
 class Strudel
   include Enumerable
 
