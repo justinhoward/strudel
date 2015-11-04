@@ -3,10 +3,6 @@ require 'spec_helper'
 describe Strudel do
   let(:app) { described_class.new }
 
-  it 'has a version number' do
-    expect(described_class::VERSION).not_to be nil
-  end
-
   context 'with a static value' do
     let(:array) { [] }
     before { app[:arr] = array }

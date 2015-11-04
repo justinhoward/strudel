@@ -1,6 +1,4 @@
-require 'strudel/version'
-
-# A container object
+# Strudel
 class Strudel
   include Enumerable
 
