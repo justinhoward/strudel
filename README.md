@@ -6,6 +6,8 @@
 (https://codeclimate.com/github/justinhoward/strudel)
 [![Test Coverage](https://codeclimate.com/github/justinhoward/strudel/badges/coverage.svg)]
 (https://codeclimate.com/github/justinhoward/strudel/coverage)
+[![Inline docs](http://inch-ci.org/github/justinhoward/strudel.svg?branch=master&style=shields)]
+(http://inch-ci.org/github/justinhoward/strudel)
 
 Strudel is a dependency injection container for Ruby. It's a way to organize
 your Ruby application to take advantage of the [dependency inversion
