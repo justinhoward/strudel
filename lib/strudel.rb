@@ -1,6 +1,4 @@
 class Strudel
-  include Enumerable
-
   def initialize
     @services = {}
     @procs = {}
@@ -47,8 +45,8 @@ class Strudel
   end
 
   def each
+    return @services.each_key unless block_given?
     @services.each_key { |key| yield key }
-    self
   end
 
   def include?(key)

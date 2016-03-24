@@ -116,7 +116,8 @@ describe Strudel do
     app.set(:bar) { |_a| 2 }
     app.factory(:baz) { |_a| 3 }
     app.protect(:prot) { 4 }
-    expect(app.to_a).to eq([:foo, :bar, :baz, :prot])
+    expect(app.each).to be_a(Enumerable)
+    expect(app.each.to_a).to eq([:foo, :bar, :baz, :prot])
   end
 
   it 'can check if it includes a key' do
