@@ -30,8 +30,8 @@ dependencies in one place.
 You may have read [this post][dhh] by David Heineimer Hansson. However he
 didn't address the primary benefit of DI, explicitly defining dependencies.
 I also happen to think that patching code at runtime for testing is a egregious
-anti-pattern.  In case you need more convincing, check out this [great post] by
-Piotr Solnica.
+anti-pattern.  In case you need more convincing, check out this
+[great post][piotr] by Piotr Solnica.
 
 ## Installation
 
@@ -43,7 +43,63 @@ gem 'strudel'
 
 ## Getting Started
 
-## Reference
+Fist create a new instance of `Strudel`.
+
+```ruby
+require 'strudel'
+app = Strudel.new
+```
+
+The methods you will use most often are `get` and `set`. These allow you to
+create and access services.
+
+```ruby
+# Set a static service
+app[:api_url] = 'http://example.com/api'
+
+# Set a shared service
+app.set(:api) do
+  RestApi.new(app[:api_url])
+end
+
+# Now we can access the api service
+app[:api].request
+```
+
+In this example, we set up and use an `api` service.
+
+- First we use the `[]=` method to create a static service called `api_url`.
+- Then we create a service called `api`. This time we pass a block into the
+  `set` method. This allows the service to be instantiated asynchronously. The
+  `RestApi` instance won't be created until we use it on the final line.
+- On the last line, we use the `[]` method to retrieve the instance of `RestApi`
+  and call a `request` method on it. Because of the way we defined the `api`
+  service, the `api.url` parameter will be passed into the `RestApi` constructor
+  when it is created.
+
+Once it's constructed, the `api` service will be cached, so if we call it again,
+Strudel will use the same instance of `RestApi`.
+
+See the API Documentation for more information or to learn about the other
+available methods:
+
+- `[]`
+- `[]=`
+- `set`
+- `factory`
+- `protect`
+- `extend`
+- `each`
+- `include?`
+
+## API Documentation
+
+API documentation can be found [inline][inline-docs], or you can generate HTML documentation
+with yard.
+
+```sh
+bin/rake yard
+```
 
 ## Credits
 
@@ -65,3 +121,4 @@ License][mit].
 [pimple]: http://pimple.sensiolabs.org
 [fabien]: https://github.com/fabpot
 [mit]: http://opensource.org/licenses/MIT
+[inline-docs]: lib/strudel.rb
