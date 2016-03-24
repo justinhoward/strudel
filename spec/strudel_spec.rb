@@ -106,7 +106,6 @@ describe Strudel do
            .factory(:fact, 'fact')
            .protect(:prot, 'prot')
            .extend(:static) {}
-           .register {}
 
     expect(app2).to equal(app)
   end
@@ -128,14 +127,6 @@ describe Strudel do
 
   it 'can be initialized with a block' do
     app = described_class.new do |a|
-      a[:foo] = 'foo'
-    end
-
-    expect(app[:foo]).to eq('foo')
-  end
-
-  it 'can register a block' do
-    app.register do |a|
       a[:foo] = 'foo'
     end
 

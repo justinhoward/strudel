@@ -53,11 +53,6 @@ class Strudel
     @services.key?(key)
   end
 
-  def register
-    yield self
-    self
-  end
-
   private
 
   def create(key, service, registry = nil)
