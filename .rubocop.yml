@@ -1,2 +1,6 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'vendor/**/*'
 Style/Documentation:
   Enabled: false

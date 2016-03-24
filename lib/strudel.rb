@@ -51,7 +51,8 @@ class Strudel
   # Same as +[]=+ except allows passing a block instead of a Proc argument.
   #
   # @param [key] key The service key
-  # @param [Proc, value, nil] service The service singleton Proc or static service
+  # @param [Proc, value, nil] service The service singleton Proc or static
+  #   service
   # @yield [self]
   # @return [self]
   def set(key, service = nil)
