@@ -2,6 +2,12 @@ require 'spec_helper'
 
 describe Strudel do
   let(:app) { described_class.new }
+  let(:full_app) do
+    app[:foo] = 1
+    app.set(:bar) { |_a| 2 }
+    app.factory(:baz) { |_a| 3 }
+    app.protect(:prot) { 4 }
+  end
 
   context 'with a static value' do
     let(:array) { [] }
@@ -111,12 +117,14 @@ describe Strudel do
   end
 
   it 'is enumerable' do
-    app[:foo] = 1
-    app.set(:bar) { |_a| 2 }
-    app.factory(:baz) { |_a| 3 }
-    app.protect(:prot) { 4 }
-    expect(app.each).to be_a(Enumerable)
-    expect(app.each.to_a).to eq([:foo, :bar, :baz, :prot])
+    expect(full_app.each).to be_a(Enumerable)
+    expect(full_app.each.to_a).to eq([:foo, :bar, :baz, :prot])
+  end
+
+  it 'can be iterated over with each' do
+    result = []
+    full_app.each { |key| result << key }
+    expect(result).to eq([:foo, :bar, :baz, :prot])
   end
 
   it 'can check if it includes a key' do
