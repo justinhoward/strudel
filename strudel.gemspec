@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name = 'strudel'
-  spec.version = '0.1.1'
+  spec.version = '0.1.2'
   spec.authors = ['Justin Howard']
   spec.email = ['jmhoward0@gmail.com']
 
@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.4'
   spec.add_development_dependency 'yard', '~> 0.8'
-  spec.add_development_dependency 'simplecov'
-  spec.add_development_dependency 'rubocop'
-  spec.add_development_dependency 'codeclimate-test-reporter'
+  spec.add_development_dependency 'simplecov', '~> 0.11'
+  spec.add_development_dependency 'rubocop', '~> 0.41'
+  spec.add_development_dependency 'codeclimate-test-reporter', '~> 0.6'
 end
