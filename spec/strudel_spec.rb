@@ -1,6 +1,4 @@
-require 'spec_helper'
-
-describe Strudel do
+RSpec.describe Strudel do
   let(:app) { described_class.new }
   let(:full_app) do
     app[:foo] = 1
