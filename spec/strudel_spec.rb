@@ -106,10 +106,10 @@ RSpec.describe Strudel do
   it 'can be chained' do
     app = described_class.new
     app2 = app
-           .set(:static, 'foo')
-           .factory(:fact, 'fact')
-           .protect(:prot, 'prot')
-           .extend(:static) {}
+      .set(:static, 'foo')
+      .factory(:fact, 'fact')
+      .protect(:prot, 'prot')
+      .extend(:static) {}
 
     expect(app2).to equal(app)
   end
