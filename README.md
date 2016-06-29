@@ -94,11 +94,11 @@ available methods:
 
 ## API Documentation
 
-API documentation can be found [inline][inline-docs], or you can generate HTML documentation
-with yard.
+API documentation can be found at [rubydoc.info][docs], or you can generate HTML
+documentation with yard.
 
 ```sh
-bin/rake yard
+bin/yard
 ```
 
 ## Credits
@@ -121,4 +121,4 @@ License][mit].
 [pimple]: http://pimple.sensiolabs.org
 [fabien]: https://github.com/fabpot
 [mit]: http://opensource.org/licenses/MIT
-[inline-docs]: lib/strudel.rb
+[docs]: http://www.rubydoc.info/github/justinhoward/strudel
