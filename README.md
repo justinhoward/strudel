@@ -29,7 +29,7 @@ dependencies in one place.
 
 You may have read [this post][dhh] by David Heineimer Hansson. However he
 didn't address the primary benefit of DI, explicitly defining dependencies.
-I also happen to think that patching code at runtime for testing is a egregious
+I also happen to think that patching code at runtime for testing is an egregious
 anti-pattern.  In case you need more convincing, check out this
 [great post][piotr] by Piotr Solnica.
 
