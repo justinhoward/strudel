@@ -1,17 +1,37 @@
+---
 language: ruby
 rvm:
-  - 2.0.0
-  - 2.2.2
-  - 2.3.1
-deploy:
-  provider: rubygems
-  api_key:
-    secure: f1rTqFzMHA1DueBSv7YzFOHy6JxUuSwflvSL6TXG5v5bWs0c6KWi1LhY43pYnpoY3ZyDtFAGgKyvQvvFCvrTB0jQx2lFo2fbXD7LoT1ThX3GLYPvGO79ycUzmXlhNFOGPZo1V3iGb5xAo8ZOVSKNesFWivy81b9SEsL4alv1QUfd2iDs4GzGJMwMIQy758PY21vQhGFfKDXld4ei9cK3hCS4999MluWtjt624FTs9oKoMfzZHfBpMa4ml6oogM1CR3tY8OzjXK0T7nLTr7ykcIiQeJGEP5q8t/IPaDs2v5yPWHv6cm8v9gCewFnzgv0Kqp0CNidzO2OlS3JmOk8mwdKad7dwpm5TKeJp3d9od35vN7H5uYZdozjfiMI7jXsQa+cfsFWWMTf5uaD0hnJFu93AWC+8xxid+/cihcbY8GA2QjjslUNGKZ0/XsWAcE3MBVyBQLecjDWidyyNbgq/LB0lS8F+U9TKTkrNLqID/HsrGnDlA15NY2Kmz74wYs5tEpm5cJ6PLjaJ+vQ8RlgI6Vk+slExheF1bXoQZrGzdXh6G3ZdPxCKynQ7KUkpRfbpmK6NdAaIf2+B77BnpKRYmLcIkfARv2bugBx571IaN8duAz0JIJIWlubL96eJv7RzzRPrsr378OTjEpO8A+w3LyOprhHJ0MYkmeItMKQKl+k=
-  gem: strudel
-  on:
-    tags: true
-    repo: justinhoward/strudel
-addons:
-  code_climate:
-    repo_token:
-      secure: "fSiRB01llLIkzTLFuRHKDwTHJYelGo7+T4q1WZq9/qBuulCzIBUS0VdS7YyZIY0WVhrdhDUVIzNmESt3nGguL9By5TasrMi4HkdaL/WQPQnn/nH4vwkyOFex1mYa/lEmUnYW6fdVWvq9aS79P20zUCcK5EBFqmWZ/jTe7ssFV9u88QwR/NOa1gH8uabsBwefFlg8hKWi+G4DKRtNuOF0dGmiE6bG3VAKv/n16WRXIfyzFHDdNdrURJObHTEzEW7+Q7JNDRsuAcaSwGAWQtOC3RZmUKWfvIy33wJE+amIhL0GHhXJ3L2s1W/pSc/eiIMg1zsGJsbeUg2VdE4XFIRY9nRamXYtCl85IYct9P1nSB4mMXC1ezCN4fmYS0CBfsBJqzEw13mRf2G3qk65z5CYPHIdL0qZ2qHvRw2tz+EVShFk9mLd9g57KsbeGcq+7daOcSMVGo4ypEd/fx512kaWdUxzZQlEZ2YqIFFI3na4aC/dZmmSFdlghtSZCtYnxz/6ZzoHvx+9rZrcR3FNNB+A3TDGynRfmIZf1ZBqKBdbrocUZ4dODxaI7/82J+y3pFoS3bmb+8r8NevwPce/QwPTesU7hJ9iBMutGLJ0+A6WB4iBpBAwq0H7awKVkluCw/me8ZAD7Nwf8+SBjWCUXX87KbCG3niF+EtKjljgE3Q3cFk="
+  - 2.3
+  - 2.4
+  - 2.5
+env:
+  global:
+    - COVERAGE=1
+    - secure: 'O3/v5fgksUZyzVDj/I0nLOwFba9UWXjIiqXguE0gMb1t2qofeI/cEJ/2RWnUpvxuF8mbuPwJG2rU3OLK+2q2pwWpMnVbScc0G8l1mVfG6IlLdkuDWWxjtieKvAbRvcfPLaai0u4V/equs1L5izOreNhc2bp0a7+0ZMHx5SgKxg5OjglcoMIIZgSixpkqITZbPmWDFYSj812lLed1MkP6zkpUsNlxOHrAhw6e3uEPTYwCPgqr2Q08ghgxZgvJP2qbD37Ei1s/fXKmsT6nsXo6y1/mb6jnIjoPkPtykRb3sp1xfFRQMER7jJy4e6ZFCz6nIbNX+7LBzE/5xPywViZ34NrzAnNaLka15w4OxVVQM9kp6mYjZ7FwtZVY6vri40DhbrtCmWOjftRsDP42gkQB51VCMYXTYOkPaeTIJeU4kkrihc5LRDCL8ZqssdW26bLw7NJmlCgedzJV1Bzfz7VfbNi2NRp4wRB9C7vtRK4+YvqFmCu+zu8hyEcE3aqwaYBZQaERZkb6TPgifZor0Kb/uS9y31FxbYlquaLukyN298kWktktP5F+y670066OPNgAoI65Clu7PI3tE9ekUBcK1lO4b25PrVWnOz2WKGVpEhTewZ+nU3Or1oKoFTPObAdbynP080CPx1WNP+CDRphyq3yJfSb7lhw98aGKVeRVVho='
+
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+script:
+  - bin/rubocop
+  - bin/rspec --format doc
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
+jobs:
+  include:
+    - stage: release
+      rvm: 2.3
+      script: skip
+      deploy:
+        provider: rubygems
+        api_key:
+          secure: 'tcEf3gBUUPOVkDFjvKhBX44cYghbFLXA5BEtmBPwqDXbWaoMVSDcsBRCddLLJts2k1tmYyGVSLP7FR8zE7tfJy40iqSqQRTtdB58SxAoMdU02+x0D8uCgMwdX7qLJePoxW4WVryMo8bql7N4ydtXwlV9POJiDKK47R21G7KvIplMGvav0/SYFFfI21BzCc6Pt8X6a0EuJXJNvqFhJAEvyp+7T8M83owIXwEIsarVc3VTTmefjAJ6zAvpLlRKYU63qN1hOqdzDfGhynNAYhIgstpDwmbwSqxkn4vxmn2OQSXwCeajLiB+nDMpevPGgE9KoeKKGWmv/N0qsgLohR9HziCBl1rolhjfYKshgN18iBBOW1iKBr0sb3EeWU2EDcnDGRvCx6vqD6LTj2TkFI0/nQYuIdPK8eWogpH3hpDwQWcC970bFDWrPFnuQ/jy2wS43y+Q8eAY3cbi07qzc5dMtA/YHkl/PpXM/VjPSWz95clcKc9tSgZN6Vy9dEfYhsTbtbY32SSBw+54N9g1dBaLgeA0T5J/HfNRRldLsZmoolNpeQ11ZLD/afL0Va4rR+qgKG3Hx8Yglp34NzZhSZ0wkrw/RPE2cSCBvknwL/thw+9PKqbSiao9GGFadVJt5KajIP501Bn8oBzoHqU9OuGG8i95MNLZSktnemMbYIgBsDc='
+        gem: uncsv
+        on:
+          tags: true
+          condition: bin/check-version
+      repo: justinhoward/strudel

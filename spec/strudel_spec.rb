@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:disable BlockLength
 RSpec.describe Strudel do
   let(:app) { described_class.new }
   let(:full_app) do
@@ -116,13 +119,13 @@ RSpec.describe Strudel do
 
   it 'is enumerable' do
     expect(full_app.each).to be_a(Enumerable)
-    expect(full_app.each.to_a).to eq([:foo, :bar, :baz, :prot])
+    expect(full_app.each.to_a).to eq(%i[foo bar baz prot])
   end
 
   it 'can be iterated over with each' do
     result = []
     full_app.each { |key| result << key }
-    expect(result).to eq([:foo, :bar, :baz, :prot])
+    expect(result).to eq(%i[foo bar baz prot])
   end
 
   it 'can check if it includes a key' do
