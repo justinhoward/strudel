@@ -1,7 +1,7 @@
+# frozen_string_literal: true
+
 require 'simplecov'
-require 'codeclimate-test-reporter'
 SimpleCov.start if ENV['COVERAGE']
-CodeClimate::TestReporter.start
 
 require 'strudel'
 

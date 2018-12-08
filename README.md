@@ -1,13 +1,10 @@
 # Strudel
 
-[![Build Status](https://travis-ci.org/justinhoward/strudel.svg?branch=master)]
-(https://travis-ci.org/justinhoward/strudel)
-[![Code Climate](https://codeclimate.com/github/justinhoward/strudel/badges/gpa.svg)]
-(https://codeclimate.com/github/justinhoward/strudel)
-[![Test Coverage](https://codeclimate.com/github/justinhoward/strudel/badges/coverage.svg)]
-(https://codeclimate.com/github/justinhoward/strudel/coverage)
-[![Inline docs](http://inch-ci.org/github/justinhoward/strudel.svg?branch=master&style=shields)]
-(http://inch-ci.org/github/justinhoward/strudel)
+[![Gem Version](https://badge.fury.io/rb/strudel.svg)](https://badge.fury.io/rb/strudel)
+[![Build Status](https://travis-ci.org/justinhoward/strudel.svg?branch=master)](https://travis-ci.org/justinhoward/strudel)
+[![Code Climate](https://codeclimate.com/github/justinhoward/strudel/badges/gpa.svg)](https://codeclimate.com/github/justinhoward/strudel)
+[![Test Coverage](https://codeclimate.com/github/justinhoward/strudel/badges/coverage.svg)](https://codeclimate.com/github/justinhoward/strudel)
+[![Inline docs](http://inch-ci.org/github/justinhoward/strudel.svg?branch=master)](http://inch-ci.org/github/justinhoward/strudel)
 
 Strudel is a dependency injection container for Ruby. It's a way to organize
 your Ruby application to take advantage of the [dependency inversion

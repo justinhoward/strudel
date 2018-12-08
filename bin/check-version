@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+tag="$(git describe --abbrev=0)"
+tag="${tag#v}"
+gt=$(ruby -r ./lib/strudel/version -e "puts Gem::Version.new(Strudel::VERSION) >= Gem::Version.new('${tag}')")
+test "$gt" = true

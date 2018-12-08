@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Strudel
 #
 # A tiny dependency injection container
@@ -136,6 +138,7 @@ class Strudel
   # @return [Enumerable, nil]
   def each
     return @services.each_key unless block_given?
+
     @services.each_key { |key| yield key }
   end
 
