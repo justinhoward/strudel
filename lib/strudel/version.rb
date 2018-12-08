@@ -2,5 +2,5 @@
 
 class Strudel
   # The current Strudel gem version
-  VERSION = '0.1.3'
+  VERSION = '1.0.0'
 end
