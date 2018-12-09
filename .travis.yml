@@ -30,7 +30,7 @@ jobs:
         provider: rubygems
         api_key:
           secure: 'tcEf3gBUUPOVkDFjvKhBX44cYghbFLXA5BEtmBPwqDXbWaoMVSDcsBRCddLLJts2k1tmYyGVSLP7FR8zE7tfJy40iqSqQRTtdB58SxAoMdU02+x0D8uCgMwdX7qLJePoxW4WVryMo8bql7N4ydtXwlV9POJiDKK47R21G7KvIplMGvav0/SYFFfI21BzCc6Pt8X6a0EuJXJNvqFhJAEvyp+7T8M83owIXwEIsarVc3VTTmefjAJ6zAvpLlRKYU63qN1hOqdzDfGhynNAYhIgstpDwmbwSqxkn4vxmn2OQSXwCeajLiB+nDMpevPGgE9KoeKKGWmv/N0qsgLohR9HziCBl1rolhjfYKshgN18iBBOW1iKBr0sb3EeWU2EDcnDGRvCx6vqD6LTj2TkFI0/nQYuIdPK8eWogpH3hpDwQWcC970bFDWrPFnuQ/jy2wS43y+Q8eAY3cbi07qzc5dMtA/YHkl/PpXM/VjPSWz95clcKc9tSgZN6Vy9dEfYhsTbtbY32SSBw+54N9g1dBaLgeA0T5J/HfNRRldLsZmoolNpeQ11ZLD/afL0Va4rR+qgKG3Hx8Yglp34NzZhSZ0wkrw/RPE2cSCBvknwL/thw+9PKqbSiao9GGFadVJt5KajIP501Bn8oBzoHqU9OuGG8i95MNLZSktnemMbYIgBsDc='
-        gem: uncsv
+        gem: strudel
         on:
           tags: true
           condition: bin/check-version
