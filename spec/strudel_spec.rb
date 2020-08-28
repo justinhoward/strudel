@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable BlockLength
 RSpec.describe Strudel do
   let(:app) { described_class.new }
   let(:full_app) do
