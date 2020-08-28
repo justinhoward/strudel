@@ -21,7 +21,8 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'redcarpet', '~> 3.4'
   spec.add_development_dependency 'rspec', '~> 3.4'
-  spec.add_development_dependency 'rubocop', '~> 0.61'
+  # 0.81 is the last rubocop version with Ruby 2.3 support
+  spec.add_development_dependency 'rubocop', '0.81.0'
   spec.add_development_dependency 'simplecov', '~> 0.11'
   spec.add_development_dependency 'yard', '>= 0.9.11'
 end

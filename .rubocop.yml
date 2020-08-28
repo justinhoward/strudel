@@ -5,13 +5,13 @@ AllCops:
 Layout/EndAlignment:
   EnforcedStyleAlignWith: variable
 
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   EnforcedStyle: with_fixed_indentation
 
-Layout/IndentArray:
+Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
 
-Layout/IndentHash:
+Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
 
 Layout/MultilineMethodCallIndentation:
@@ -19,3 +19,7 @@ Layout/MultilineMethodCallIndentation:
 
 Lint/MissingCopEnableDirective:
   Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/*
