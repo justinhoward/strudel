@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'strudel/version'
+
 # Strudel
 #
 # A tiny dependency injection container
