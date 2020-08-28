@@ -57,8 +57,8 @@ class Strudel
   #   service
   # @yield [self]
   # @return [self]
-  def set(key, service = nil)
-    create(key, service || Proc.new, @procs)
+  def set(key, service = nil, &block)
+    create(key, service || block, @procs)
   end
 
   # Set a factory service by key and value
@@ -73,8 +73,8 @@ class Strudel
   # @param [Proc, block] factory The service factory Proc or static service
   # @yield [self]
   # @return [self]
-  def factory(key, factory = nil)
-    create(key, factory || Proc.new, @factories)
+  def factory(key, factory = nil, &block)
+    create(key, factory || block, @factories)
   end
 
   # Set a protected service by name and value
@@ -89,8 +89,8 @@ class Strudel
   # @param [Proc, value, nil] service The service function.
   # @yield [self]
   # @return [self]
-  def protect(key, service = nil)
-    create(key, service || Proc.new)
+  def protect(key, service = nil, &block)
+    create(key, service || block)
   end
 
   # Extends an existing service and overrides it.
@@ -116,8 +116,8 @@ class Strudel
   # @param [Proc, value, nil] extender
   # @yield [old_value, self]
   # @return [self]
-  def extend(key, extender = nil)
-    extender ||= Proc.new
+  def extend(key, extender = nil, &block)
+    extender ||= block
     return set(key, extender) unless extender.is_a?(Proc) && @services.key?(key)
 
     extended = @services[key]
