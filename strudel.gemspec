@@ -6,7 +6,7 @@ require 'strudel/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'strudel'
-  spec.version = Strudel::VERSION
+  spec.version = Strudel.version
   spec.authors = ['Justin Howard']
   spec.email = ['jmhoward0@gmail.com']
 
