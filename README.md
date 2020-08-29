@@ -13,7 +13,7 @@ principle][ioc].
 ## Why another DI framework?
 
 Strudel is not a framework. It's one class that serves as a container only. No
-auto-injection. That means no polluting your classes with garbage injection
+auto-injection. That means no polluting your classes with injection
 metaprogramming. You have full, explicit control over how your services
 are constructed.
 
@@ -26,9 +26,8 @@ dependencies in one place.
 
 You may have read [this post][dhh] by David Heineimer Hansson. However he
 didn't address the primary benefit of DI, explicitly defining dependencies.
-I also happen to think that patching code at runtime for testing is an egregious
-anti-pattern.  In case you need more convincing, check out this
-[great post][piotr] by Piotr Solnica.
+I also happen to think that patching code at runtime for testing is an
+anti-pattern worth avoiding.
 
 ## Installation
 
@@ -112,7 +111,6 @@ License][mit].
 
 [ioc]: https://en.wikipedia.org/wiki/Dependency_inversion_principle
 [dhh]: http://david.heinemeierhansson.com/2012/dependency-injection-is-not-a-virtue.html
-[piotr]: http://solnic.eu/2013/12/17/the-world-needs-another-post-about-dependency-injection-in-ruby.html
 [papaya]: https://github.com/justinhoward/papaya
 [justin]: https://github.com/justinhoward
 [pimple]: http://pimple.sensiolabs.org
