@@ -1,9 +1,8 @@
 # Strudel
 
 [![Gem Version](https://badge.fury.io/rb/strudel.svg)](https://badge.fury.io/rb/strudel)
-[![Build Status](https://travis-ci.org/justinhoward/strudel.svg?branch=master)](https://travis-ci.org/justinhoward/strudel)
-[![Code Climate](https://codeclimate.com/github/justinhoward/strudel/badges/gpa.svg)](https://codeclimate.com/github/justinhoward/strudel)
-[![Test Coverage](https://codeclimate.com/github/justinhoward/strudel/badges/coverage.svg)](https://codeclimate.com/github/justinhoward/strudel)
+[![CI](https://github.com/justinhoward/strudel/workflows/CI/badge.svg)](https://github.com/justinhoward/strudel/actions?query=workflow%3ACI+branch%3Amaster)
+[![Codacy](https://app.codacy.com/project/badge/Grade/79b0e9d0f90c44f2baca0ea4f076ae3a)](https://www.codacy.com/gh/justinhoward/strudel/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=justinhoward/strudel&amp;utm_campaign=Badge_Grade)
 [![Inline docs](http://inch-ci.org/github/justinhoward/strudel.svg?branch=master)](http://inch-ci.org/github/justinhoward/strudel)
 
 Strudel is a dependency injection container for Ruby. It's a way to organize

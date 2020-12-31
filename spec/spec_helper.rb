@@ -1,7 +1,23 @@
 # frozen_string_literal: true
 
-require 'simplecov'
-SimpleCov.start if ENV['COVERAGE']
+require 'byebug' if Gem.loaded_specs['byebug']
+
+if ENV['COVERAGE'] || ENV['CI']
+  require 'simplecov'
+  if ENV['CI']
+    require 'simplecov-lcov'
+    SimpleCov::Formatter::LcovFormatter.config.report_with_single_file = true
+    SimpleCov.formatter = SimpleCov::Formatter::LcovFormatter
+  end
+
+  SimpleCov.start do
+    if Gem::Version.new(SimpleCov::VERSION) >= Gem::Version.new('0.18.0')
+      enable_coverage :branch
+    end
+    add_filter '/spec/'
+    add_filter '/vendor/'
+  end
+end
 
 require 'strudel'
 
@@ -17,5 +33,5 @@ RSpec.configure do |config|
 
   config.disable_monkey_patching!
 
-  config.warnings = true
+  config.warnings = false
 end
