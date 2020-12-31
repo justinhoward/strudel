@@ -4,21 +4,21 @@ AllCops:
 
 Layout/EndAlignment:
   EnforcedStyleAlignWith: variable
-
 Layout/ParameterAlignment:
   EnforcedStyle: with_fixed_indentation
-
 Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
-
 Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
-
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
 Lint/MissingCopEnableDirective:
   Enabled: false
+Lint/RaiseException:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
 
 Metrics/BlockLength:
   Exclude:
@@ -26,3 +26,9 @@ Metrics/BlockLength:
 
 Style/Documentation:
   Enabled: false
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
