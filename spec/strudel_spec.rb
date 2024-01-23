@@ -11,9 +11,10 @@ RSpec.describe Strudel do
 
   context 'with a static value' do
     let(:array) { [] }
+
     before { app[:arr] = array }
 
-    it 'should return an exact match' do
+    it 'returns an exact match' do
       expect(app[:arr]).to equal(array)
     end
 
@@ -26,7 +27,7 @@ RSpec.describe Strudel do
   context 'with service proc' do
     before { app.set(:shared) { |_a| {} } }
 
-    it 'should return same object multiple times' do
+    it 'returns the same object multiple times' do
       expect(app[:shared]).to equal(app[:shared])
     end
 
@@ -56,7 +57,7 @@ RSpec.describe Strudel do
   context 'with factory' do
     before { app.factory(:obj) { |_a| {} } }
 
-    it 'should return different object each call' do
+    it 'returns a different object each call' do
       expect(app[:obj]).not_to equal(app[:obj])
     end
 
@@ -80,9 +81,10 @@ RSpec.describe Strudel do
 
   context 'with protected proc' do
     let(:proc) { -> {} }
+
     before { app.protect(:protected, proc) }
 
-    it 'should return the proc' do
+    it 'returns the proc' do
       expect(app[:protected]).to equal(proc)
     end
 
@@ -99,7 +101,7 @@ RSpec.describe Strudel do
 
   it 'can extend an undefined service' do
     app.extend(:foo) do |_a, p|
-      expect(p).to eq(nil)
+      expect(p).to be_nil
       'foo'
     end
     expect(app[:foo]).to eq('foo')
@@ -111,7 +113,7 @@ RSpec.describe Strudel do
       .set(:static, 'foo')
       .factory(:fact, 'fact')
       .protect(:prot, 'prot')
-      .extend(:static) {}
+      .extend(:static) { nil }
 
     expect(app2).to equal(app)
   end
@@ -129,8 +131,8 @@ RSpec.describe Strudel do
 
   it 'can check if it includes a key' do
     app[:foo] = 'foo'
-    expect(app.include?(:foo)).to eq(true)
-    expect(app.include?(:bar)).to eq(false)
+    expect(app.include?(:foo)).to be(true)
+    expect(app.include?(:bar)).to be(false)
   end
 
   it 'can be initialized with a block' do

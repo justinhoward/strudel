@@ -37,7 +37,7 @@ class Strudel
   #
   # If `service` is a Proc, its return value will be treated as a
   # singleton service meaning it will be initialized the first time it is
-  # requested and its valud will be cached for subsequent requests.
+  # requested and its value will be cached for subsequent requests.
   #
   # Use the `set` method to allow using a block instead of a Proc argument.
   #
@@ -138,10 +138,10 @@ class Strudel
   #
   # @yield [key] Gives the key
   # @return [Enumerable, nil]
-  def each
-    return @services.each_key unless block_given?
+  def each(&block)
+    return @services.each_key unless block
 
-    @services.each_key { |key| yield key }
+    @services.each_key(&block)
   end
 
   # Checks if a service for `key` exists.
@@ -157,7 +157,7 @@ class Strudel
   #
   # @param [key] key The service key
   # @param [value] service The service value or factory
-  # @param [Hash] registry If the service is a proc, the registery
+  # @param [Hash] registry If the service is a proc, the registry
   def create(key, service, registry = nil)
     [@procs, @factories].each { |reg| reg.delete key }
     registry[key] = true if registry && service.is_a?(Proc)
