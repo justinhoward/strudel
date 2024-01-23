@@ -7,12 +7,15 @@ gemspec
 
 not_jruby = %i[ruby mingw x64_mingw].freeze
 
-gem 'bundler', '>= 1.17', '< 3'
+gem 'bundler'
 gem 'byebug', platforms: not_jruby
-gem 'irb', '~> 1.0'
-gem 'redcarpet', '~> 3.5', platforms: not_jruby
-gem 'simplecov', '>= 0.17.1'
-# 0.8 is incompatible with simplecov < 0.18
-# https://github.com/fortissimo1997/simplecov-lcov/pull/25
-gem 'simplecov-lcov', '~> 0.7', '< 0.8'
-gem 'yard', '~> 0.9.26', platforms: not_jruby
+gem 'irb'
+gem 'redcarpet', '~> 3.6', platforms: not_jruby
+gem 'yard', '~> 0.9.34', platforms: not_jruby
+
+if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.7')
+  gem 'rubocop', '~> 1.60.1'
+  gem 'rubocop-rspec', '~> 2.26.1'
+  gem 'simplecov', '~> 0.22.0'
+  gem 'simplecov-cobertura', '~> 2.1'
+end

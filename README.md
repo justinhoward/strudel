@@ -3,12 +3,11 @@
 [![Gem Version](https://badge.fury.io/rb/strudel.svg)](https://badge.fury.io/rb/strudel)
 [![CI](https://github.com/justinhoward/strudel/workflows/CI/badge.svg)](https://github.com/justinhoward/strudel/actions?query=workflow%3ACI+branch%3Amaster)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/79b0e9d0f90c44f2baca0ea4f076ae3a)](https://www.codacy.com/gh/justinhoward/strudel/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=justinhoward/strudel&amp;utm_campaign=Badge_Grade)
-[![Coverage](https://app.codacy.com/project/badge/Coverage/79b0e9d0f90c44f2baca0ea4f076ae3a)](https://www.codacy.com/gh/justinhoward/strudel/dashboard?utm_source=github.com&utm_medium=referral&utm_content=justinhoward/strudel&utm_campaign=Badge_Coverage)
-[![Inline docs](http://inch-ci.org/github/justinhoward/strudel.svg?branch=master)](http://inch-ci.org/github/justinhoward/strudel)
+[![Code Coverage](https://codecov.io/github/justinhoward/strudel/graph/badge.svg?token=gDRBH8xZ8e)](https://codecov.io/github/justinhoward/strudel)
+[![Online docs](https://img.shields.io/badge/docs-✓-green.svg)](https://www.rubydoc.info/github/justinhoward/strudel)
 
 Strudel is a dependency injection container for Ruby. It's a way to organize
-your Ruby application to take advantage of the [dependency inversion
-principle][ioc].
+your Ruby application to take advantage of the [dependency inversion principle][ioc].
 
 ## Why another DI framework?
 

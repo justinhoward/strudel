@@ -14,13 +14,15 @@ Gem::Specification.new do |spec|
   spec.homepage = 'https://github.com/justinhoward/strudel'
   spec.license = 'MIT'
 
-  spec.files = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(spec)/})
-  end
+  rubydoc = 'https://www.rubydoc.info/gems'
+  spec.metadata['rubygems_mfa_required'] = 'true'
+  spec.metadata['changelog_uri'] = "#{spec.homepage}/blob/master/CHANGELOG.md"
+  spec.metadata['documentation_uri'] = "#{rubydoc}/#{spec.name}/#{spec.version}"
+
+  spec.files = Dir['lib/**/*.rb', '*.md', '*.txt', '.yardopts']
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'rspec', '~> 3.4'
-  # 0.81 is the last rubocop version with Ruby 2.3 support
-  spec.add_development_dependency 'rubocop', '0.81.0'
-  spec.add_development_dependency 'rubocop-rspec', '1.38.1'
+  spec.required_ruby_version = '>= 2.3'
+
+  spec.add_development_dependency 'rspec', '~> 3.12'
 end
